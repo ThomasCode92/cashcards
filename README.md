@@ -17,3 +17,13 @@
 ./gradlew build
 ./gradlew test
 ```
+
+## Formatting
+
+This project uses [Spotless](https://github.com/diffplug/spotless) with
+the [Palantir](https://github.com/palantir/gradle-baseline) Java formatter. To format the code, run the following
+command:
+
+```shell
+./gradlew spotlessApply
+```

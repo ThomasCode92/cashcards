@@ -1,1 +1,8 @@
+import org.apache.tools.ant.DirectoryScanner
+
 rootProject.name = 'cashcard'
+
+// HACK: include .gitignore and .gitattributes files in the Gradle build scan
+// see Github issue: https://github.com/diffplug/spotless/issues/1146#issuecomment-1461408668
+DirectoryScanner.removeDefaultExclude("**/.gitignore")
+DirectoryScanner.removeDefaultExclude("**/.gitattributes")
