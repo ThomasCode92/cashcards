@@ -1,0 +1,8 @@
+# Custom Dictionary Words
+AOSP
+assertj
+cashcard
+cashcards
+diffplug
+springframework
+webmvc
