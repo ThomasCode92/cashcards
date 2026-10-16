@@ -33,11 +33,30 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+
+	implementation 'com.h2database:h2'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test', Test) {
 	useJUnitPlatform()
+}
+
+// This section causes useful test output to go to the terminal.
+test {
+	testLogging {
+		events "passed", "skipped", "failed" //, "standardOut", "standardError"
+
+		showExceptions = true
+		exceptionFormat = "full"
+		showCauses = true
+		showStackTraces = true
+
+		// Change to `true` for more verbose test output
+		showStandardStreams = false
+	}
 }
